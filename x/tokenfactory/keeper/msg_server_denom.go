@@ -75,27 +75,27 @@ func (k msgServer) UpdateDenom(goCtx context.Context, msg *types.MsgUpdateDenom)
 	return &types.MsgUpdateDenomResponse{}, nil
 }
 
-func (k msgServer) DeleteDenom(goCtx context.Context, msg *types.MsgDeleteDenom) (*types.MsgDeleteDenomResponse, error) {
-	ctx := sdk.UnwrapSDKContext(goCtx)
+// func (k msgServer) DeleteDenom(goCtx context.Context, msg *types.MsgDeleteDenom) (*types.MsgDeleteDenomResponse, error) {
+// 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	// Check if the value exists
-	valFound, isFound := k.GetDenom(
-		ctx,
-		msg.Denom,
-	)
-	if !isFound {
-		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "index not set")
-	}
+// 	// Check if the value exists
+// 	valFound, isFound := k.GetDenom(
+// 		ctx,
+// 		msg.Denom,
+// 	)
+// 	if !isFound {
+// 		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "index not set")
+// 	}
 
-	// Checks if the msg owner is the same as the current owner
-	if msg.Owner != valFound.Owner {
-		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
-	}
+// 	// Checks if the msg owner is the same as the current owner
+// 	if msg.Owner != valFound.Owner {
+// 		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
+// 	}
 
-	k.RemoveDenom(
-		ctx,
-		msg.Denom,
-	)
+// 	k.RemoveDenom(
+// 		ctx,
+// 		msg.Denom,
+// 	)
 
-	return &types.MsgDeleteDenomResponse{}, nil
-}
+// 	return &types.MsgDeleteDenomResponse{}, nil
+// }

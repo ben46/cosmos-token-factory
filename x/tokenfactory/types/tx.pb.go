@@ -611,14 +611,14 @@ func (c *msgClient) UpdateDenom(ctx context.Context, in *MsgUpdateDenom, opts ..
 	return out, nil
 }
 
-func (c *msgClient) DeleteDenom(ctx context.Context, in *MsgDeleteDenom, opts ...grpc.CallOption) (*MsgDeleteDenomResponse, error) {
-	out := new(MsgDeleteDenomResponse)
-	err := c.cc.Invoke(ctx, "/tokenfactory.tokenfactory.Msg/DeleteDenom", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
+// func (c *msgClient) DeleteDenom(ctx context.Context, in *MsgDeleteDenom, opts ...grpc.CallOption) (*MsgDeleteDenomResponse, error) {
+// 	out := new(MsgDeleteDenomResponse)
+// 	err := c.cc.Invoke(ctx, "/tokenfactory.tokenfactory.Msg/DeleteDenom", in, out, opts...)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	return out, nil
+// }
 
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
@@ -627,7 +627,7 @@ type MsgServer interface {
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
 	CreateDenom(context.Context, *MsgCreateDenom) (*MsgCreateDenomResponse, error)
 	UpdateDenom(context.Context, *MsgUpdateDenom) (*MsgUpdateDenomResponse, error)
-	DeleteDenom(context.Context, *MsgDeleteDenom) (*MsgDeleteDenomResponse, error)
+	// DeleteDenom(context.Context, *MsgDeleteDenom) (*MsgDeleteDenomResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
