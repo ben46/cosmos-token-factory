@@ -81,4 +81,3 @@ func (msg *MsgUpdateDenom) ValidateBasic() error {
 	}
 	return nil
 }
-

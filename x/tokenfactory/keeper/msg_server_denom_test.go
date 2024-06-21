@@ -86,4 +86,3 @@ func TestDenomMsgServerUpdate(t *testing.T) {
 		})
 	}
 }
-

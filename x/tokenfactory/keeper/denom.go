@@ -40,7 +40,6 @@ func (k Keeper) GetDenom(
 	return val, true
 }
 
-
 // GetAllDenom returns all denom
 func (k Keeper) GetAllDenom(ctx context.Context) (list []types.Denom) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))

@@ -70,4 +70,3 @@ func TestMsgUpdateDenom_ValidateBasic(t *testing.T) {
 		})
 	}
 }
-

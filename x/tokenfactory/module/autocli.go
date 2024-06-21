@@ -51,12 +51,18 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Update Denom",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "denom"}, {ProtoField: "description"}, {ProtoField: "ticker"}, {ProtoField: "precision"}, {ProtoField: "url"}, {ProtoField: "maxSupply"}, {ProtoField: "supply"}, {ProtoField: "canChangeMaxSupply"}},
 				},
-			 
+
 				{
 					RpcMethod:      "MintAndSendTokens",
 					Use:            "mint-and-send-tokens [denom] [amount] [recipient]",
 					Short:          "Send a MintAndSendTokens tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "denom"}, {ProtoField: "amount"}, {ProtoField: "recipient"}},
+				},
+				{
+					RpcMethod:      "UpdateOwner",
+					Use:            "update-owner [denom] [new-owner]",
+					Short:          "Send a UpdateOwner tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "denom"}, {ProtoField: "newOwner"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},

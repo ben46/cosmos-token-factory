@@ -69,10 +69,10 @@ func (k msgServer) UpdateDenom(goCtx context.Context, msg *types.MsgUpdateDenom)
 	}
 
 	var denom = types.Denom{
-		Owner:              msg.Owner,
-		Denom:              msg.Denom,
-		Description:        msg.Description,
-		
+		Owner:       msg.Owner,
+		Denom:       msg.Denom,
+		Description: msg.Description,
+
 		Url:                msg.Url,
 		MaxSupply:          msg.MaxSupply,
 		CanChangeMaxSupply: msg.CanChangeMaxSupply,
@@ -82,4 +82,3 @@ func (k msgServer) UpdateDenom(goCtx context.Context, msg *types.MsgUpdateDenom)
 
 	return &types.MsgUpdateDenomResponse{}, nil
 }
-
