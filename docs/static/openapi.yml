@@ -16503,16 +16503,13 @@ paths:
               maxSupply:
                 type: integer
                 format: int32
-              supply:
-                type: integer
-                format: int32
               canChangeMaxSupply:
                 type: boolean
       tags:
         - Msg
-  /tokenfactory.tokenfactory.Msg/DeleteDenom:
+  /tokenfactory.tokenfactory.Msg/MintAndSendTokens:
     post:
-      operationId: TokenfactoryTokenfactoryMsg_DeleteDenom
+      operationId: TokenfactoryTokenfactoryMsg_MintAndSendTokens
       responses:
         '200':
           description: A successful response.
@@ -16546,6 +16543,11 @@ paths:
               owner:
                 type: string
               denom:
+                type: string
+              amount:
+                type: integer
+                format: int32
+              recipient:
                 type: string
       tags:
         - Msg
@@ -16588,17 +16590,9 @@ paths:
                 type: string
               description:
                 type: string
-              ticker:
-                type: string
-              precision:
-                type: integer
-                format: int32
               url:
                 type: string
               maxSupply:
-                type: integer
-                format: int32
-              supply:
                 type: integer
                 format: int32
               canChangeMaxSupply:
@@ -23522,21 +23516,23 @@ definitions:
       maxSupply:
         type: integer
         format: int32
-      supply:
-        type: integer
-        format: int32
       canChangeMaxSupply:
         type: boolean
   tokenfactory.tokenfactory.MsgCreateDenomResponse:
     type: object
-  tokenfactory.tokenfactory.MsgDeleteDenom:
+  tokenfactory.tokenfactory.MsgMintAndSendTokens:
     type: object
     properties:
       owner:
         type: string
       denom:
         type: string
-  tokenfactory.tokenfactory.MsgDeleteDenomResponse:
+      amount:
+        type: integer
+        format: int32
+      recipient:
+        type: string
+  tokenfactory.tokenfactory.MsgMintAndSendTokensResponse:
     type: object
   tokenfactory.tokenfactory.MsgUpdateDenom:
     type: object
@@ -23547,17 +23543,9 @@ definitions:
         type: string
       description:
         type: string
-      ticker:
-        type: string
-      precision:
-        type: integer
-        format: int32
       url:
         type: string
       maxSupply:
-        type: integer
-        format: int32
-      supply:
         type: integer
         format: int32
       canChangeMaxSupply:

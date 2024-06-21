@@ -21,3 +21,22 @@ Denom 是 "Denomination" 的缩写，指的是代币的名称或标识符。
 * **`--index denom`**： 这表示 `denom` 字段将被用作索引，方便快速查找特定的代币类型。
 * **`--module tokenfactory`**： 这表示这个映射结构属于 `tokenfactory` 模块。
 
+
+# 搭建新消息
+
+该消息允许创建（铸造）新代币并将其分配给指定的接收者。必要的输入包括面额、铸币数量和收件人地址。
+
+```
+ignite scaffold message MintAndSendTokens denom:string amount:int recipient:string --module tokenfactory --signer owner
+```
+
+该消息促进了面额所有权的转移。它需要面额名称和新所有者的地址。
+
+```
+ignite scaffold message UpdateOwner denom:string newOwner:string --module tokenfactory --signer owner
+```
+
+
+
+
+
